@@ -2,6 +2,8 @@ import BottomTabNavigator from "../components/BottomTabNavigator";
 import CloseContacts from "../components/CloseContacts";
 import LoginScreen from "../components/Login";
 import MapScreen from "../components/MapScreen";
+import SoundMonitor from "../components/RecordSound";
+import ContinuousAudioListener from "../components/RecordSound";
 import RegisterScreen from "../components/Register";
 import WelcomeScreen from "../components/WelcomePage";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -15,6 +17,7 @@ export type RootStackParamList = {
     Map: undefined;
     Bottom: undefined;
     Contacts : undefined;
+    RecordSound : undefined
   };
   
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -29,6 +32,7 @@ export type RootStackParamList = {
           <Stack.Screen name="Map" component={MapScreen} />
           <Stack.Screen name="Bottom" component={BottomTabNavigator} />
           <Stack.Screen name="Contacts" component={CloseContacts} />
+          <Stack.Screen name="RecordSound" component={SoundMonitor} />
         </Stack.Navigator>
   
     );

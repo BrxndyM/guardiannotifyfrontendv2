@@ -24,7 +24,7 @@ export default function LoginScreen({ navigation }: Props) {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://3ef2-41-57-177-2.ngrok-free.app/api/TokenAuth/Authenticate', {
+      const response = await fetch('https://9121-41-57-177-2.ngrok-free.app/api/TokenAuth/Authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export default function LoginScreen({ navigation }: Props) {
         await AsyncStorage.setItem('accessToken', accessToken);
 
         // Fetch current user information
-        const userResponse = await fetch('https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/Session/GetCurrentLoginInformations', {
+        const userResponse = await fetch('https://9121-41-57-177-2.ngrok-free.app/api/services/app/Session/GetCurrentLoginInformations', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${accessToken}`,

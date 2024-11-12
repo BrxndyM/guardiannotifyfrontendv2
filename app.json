@@ -11,11 +11,31 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow Guardian Notify to access your microphone to detect emergency sounds.",
+          "backgroundAudio": true,
+          "iosVoiceEnabled": true
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "This app uses your location to show it on the map.",
-        "NSContactsUsageDescription": "This app needs access to your contacts to help you select people."
+        "NSContactsUsageDescription": "This app needs access to your contacts to help you select people.",
+        "NSMicrophoneUsageDescription": "Allow Guardian Notify to access your microphone to detect emergency sounds.",
+        "UIBackgroundModes": [
+          "audio",
+          "fetch",
+          "processing"
+        ],
+        "BGTaskSchedulerPermittedIdentifiers": [
+          "com.guardiangotify.audiotask"
+        ],
+        "NSCameraUsageDescription": "This app does not use the camera."
       }
     },
     "android": {
@@ -26,8 +46,18 @@
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
-        "READ_CONTACTS"
-      ]
+        "READ_CONTACTS",
+        "RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.FOREGROUND_SERVICE_MICROPHONE"
+      ],
+      "foregroundService": {
+        "notificationTitle": "Guardian Notify",
+        "notificationText": "Monitoring for emergency sounds",
+        "notificationColor": "#4630EB"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

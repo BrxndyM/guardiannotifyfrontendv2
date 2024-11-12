@@ -51,7 +51,7 @@ export default function RegisterScreen({ navigation }: Props) {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch('https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/Person/Create', {
+      const response = await fetch('https://9121-41-57-177-2.ngrok-free.app/api/services/app/Person/Create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

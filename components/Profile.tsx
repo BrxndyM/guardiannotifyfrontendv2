@@ -44,7 +44,7 @@ export default function ProfileScreen() {
       if (!userId) {
         throw new Error('User ID not found in local storage');
       }
-      const response = await fetch(`https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/Person/GetPersonByUserId?userId=${userId}`);
+      const response = await fetch(`https://9121-41-57-177-2.ngrok-free.app/api/services/app/Person/GetPersonByUserId?userId=${userId}`);
       console.log("Response Status:", response.status);
       if (!response.ok) {
         throw new Error('Failed to fetch user data');
@@ -78,7 +78,7 @@ export default function ProfileScreen() {
   const saveChanges = async () => {
     if (editableUser) {
       try {
-        const response = await fetch(`https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/Person/UpdatePerson`, {
+        const response = await fetch(`https://9121-41-57-177-2.ngrok-free.app/api/services/app/Person/UpdatePerson`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

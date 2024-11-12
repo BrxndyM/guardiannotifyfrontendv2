@@ -57,7 +57,7 @@ const AddCloseContact: React.FC<AddCloseContactProps> = ({ isVisible, onClose, o
 
     try {
       const response = await axios.post(
-        'https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/Create',
+        'https://9121-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/Create',
         newContact,
         {
           headers: {

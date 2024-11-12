@@ -7,6 +7,7 @@ import { View, StyleSheet } from 'react-native';
 import MapScreen from './MapScreen';
 import ProfileScreen from './Profile'; // Ensure correct import path
 import CloseContacts from './CloseContacts'; // Import the CloseContacts component
+import ContinuousAudioListener from './RecordSound';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,7 +53,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen 
         name="Sound" 
-        component={SoundScreen}
+        component={ContinuousAudioListener}
         options={{ tabBarLabel: 'Sound' }}
       />
       <Tab.Screen 

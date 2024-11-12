@@ -38,7 +38,7 @@ const CloseContacts = () => {
     try {
       const userId = await AsyncStorage.getItem('userId');
       if (userId) {
-        const response = await axios.get(`https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/GetAllByUserId?userId=${userId}`);
+        const response = await axios.get(`https://9121-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/GetAllByUserId?userId=${userId}`);
         setContacts(response.data.result);
       }
       setLoading(false);
@@ -85,7 +85,7 @@ const CloseContacts = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/Delete?id=${id}`);
+      await axios.delete(`https://9121-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/Delete?id=${id}`);
       fetchContacts();
     } catch (err) {
       Alert.alert('Error', 'Failed to delete contact');
@@ -119,7 +119,7 @@ const CloseContacts = () => {
       }
   
       // Fetch the personId using the userId
-      const personResponse = await axios.get(`https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/Person/GetPersonByUserId?userId=${userId}`, {
+      const personResponse = await axios.get(`https://9121-41-57-177-2.ngrok-free.app/api/services/app/Person/GetPersonByUserId?userId=${userId}`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }
@@ -142,7 +142,7 @@ const CloseContacts = () => {
   
       // Send the update request
       const updateResponse = await axios.put(
-        `https://3ef2-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/Update`,
+        `https://9121-41-57-177-2.ngrok-free.app/api/services/app/CloseContact/Update`,
         updatedContact,
         {
           headers: {
